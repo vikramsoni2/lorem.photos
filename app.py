@@ -5,6 +5,9 @@ from flask import Flask, Response, request, abort, render_template_string, send_
 from PIL import Image, ImageOps
 from io import StringIO, BytesIO
 
+print("\n\n\n\n current working directory", os.getcwd(),"\n\n\n\n")
+
+
 app = Flask(__name__)
 
 WIDTH = 300
@@ -58,6 +61,8 @@ path = './data/'
 files = os.listdir(path)
 
 
+print("files ", files) 
+
 def serve_pil_image(pil_img):
     img_io = BytesIO()
     pil_img.save(img_io, 'JPEG', quality=70)
@@ -93,7 +98,7 @@ def image(filename):
 @app.route('/list')
 def index():
     images = []
-    for root, dirs, files in os.walk('./data'):
+    for root, dirs, files in os.walk('/data/'):
         
         for filename in [os.path.join(root, name) for name in files]:
             if not filename.endswith('.jpg'):
