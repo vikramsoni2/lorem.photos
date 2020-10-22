@@ -1,42 +1,58 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&display=swap");
-
 body {
   margin: 0;
   font: 22px/30px "Source Sans Pro", sans-serif;
   color: #2c2d48;
   background: #f6ede4;
 }
+
 .heading {
-   display:flex; align-items: baseline; justify-content:space-between;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
 }
+
 .page {
   padding: 20px;
   margin-bottom: 25px;
-  box-shadow: 0px 15px 10px rgba(0,0,0,0.3);
+  box-shadow: 0px 15px 10px rgba(0, 0, 0, 0.3);
   display: grid;
   grid-template-columns: 3fr 2fr;
   gap: 30px;
 }
+
 @media (max-width: 800px) {
-  .page{grid-template-columns:1fr;grid-template-rows: 1fr 400px;}
+  .page {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 400px;
+  }
 }
 h1 {
   font-family: "Playfair Display", serif;
 }
+
 p {
   line-height: 1.6em;
   text-align: justify;
 }
-a {text-decoration: underline dotted; color: white;}
 
-.svg {width: 2rem; height: 2rem;}
-.vertical {transform:rotate(90deg);}
+a {
+  text-decoration: underline dotted;
+  color: white;
+}
+
+.svg {
+  width: 2rem;
+  height: 2rem;
+}
+
+.vertical {
+  transform: rotate(90deg);
+}
+
 .header {
-  h1 {
-    margin: 0 20px;
-  }
   text-align: center;
   line-height: normal;
   background-color: #333;
@@ -45,22 +61,32 @@ a {text-decoration: underline dotted; color: white;}
   font-size: 1.8rem;
   padding: 10px 20px 20px 20px;
 }
+.header h1 {
+  margin: 0 20px;
+}
+
 .container {
   border: 5px solid #2c2d48;
   font-family: "Oswald", sans-serif;
-  background-color:#fffaf4;
+  background-color: #fffaf4;
 }
+
 pre {
   font-size: 1.2rem;
   padding: 20px 60px 20px 40px;
   background-color: #333;
   color: #fff;
 }
-.footer{
-  background: #444;color: white; padding: 20px;
-}
-.center-me {background-color: #ffd;}
 
+.footer {
+  background: #444;
+  color: white;
+  padding: 20px;
+}
+
+.center-me {
+  background-color: #ffd;
+}
 
 /*
 ################################################
@@ -69,7 +95,6 @@ pre {
 ############------------------------############
 ################################################
 */
-
 /*
 -----------------------------------------------
 Using Flexbox
@@ -94,12 +119,13 @@ Using Grid
 Using Position Absolute
 -----------------------------------------------*/
 #example3 {
-  position:relative;
+  position: relative;
 }
+
 #example3 .center-me {
   position: absolute;
-  top:50%;
-  left:50%;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
 }
 
@@ -110,6 +136,7 @@ Using Display Table
 #example4 {
   display: table;
 }
+
 #example4 .center-me {
   display: table-cell;
   vertical-align: middle;
@@ -138,7 +165,7 @@ Using Text Align
 -----------------------------------------------
 Padding with calc
 -----------------------------------------------*/
-#example7 .center-me{
+#example7 .center-me {
   width: 100px;
   padding: 0 calc(50% - 50px);
 }
