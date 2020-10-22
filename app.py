@@ -8,7 +8,7 @@ from io import StringIO, BytesIO
 print("\n\n\n\n current working directory", os.getcwd(),"\n\n\n\n")
 
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='/blog')
 
 WIDTH = 300
 HEIGHT = 200
