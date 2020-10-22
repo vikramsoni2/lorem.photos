@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Center using CSS</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+    <div class="page">
+        <div class="details">
+          <em>Example 1</em>
+          <div class="heading">
+            <h1>Flexbox</h1>
+            <div>
+              <img src="http://lorem.photos/blog/images/align.svg" alt="hotizontal" class="svg horizontal" title="Horizontal Alignment">
+              <img src="http://lorem.photos/blog/images/align.svg" alt="Vertical" class="svg vertical" title="Vertical Alignment">
+            </div>
+          </div>
+          <p>Flexbox is the easiest way to center an element both vertically and horizontally. When you do not know the width and height of the child or the parent div, you can use <code>display: flex;</code> on the parent container and <code>align-items: center;</code> centers the child vertically and <code>justify-content: center;</code> centers it horizontally.</p>
+          <pre><code>.container { 
+          display: flex;
+          align-items: center;
+          justify-contents: center;
+      }</code></pre>
+        </div>
+        <div class="container" id="example1">
+          <div class="center-me">center me!</div>
+        </div>
+      </div>
+      
+
+
+      <div class="page">
+        <div class="details">
+          <em>Example 2</em>
+          <div class="heading">
+            <h1>Grid</h1>
+            <div>
+              <img src="http://lorem.photos/blog/images/align.svg" alt="hotizontal" class="svg horizontal" title="Horizontal Alignment">
+              <img src="http://lorem.photos/blog/images/align.svg" alt="Vertical" class="svg vertical" title="Vertical Alignment">
+            </div>
+          </div>
+          <p>It is possible to make the content centered using grid by giving its parent display grid property. Grid has a shortcut <code>place-items: center;</code> which makes the child both horizontally and vertically centered.
+            <br /><br />
+            <em>NOTE: You can also use <code>margin: auto;</code> on the child element to center it inside a grid container</em>
+          </p>
+          <pre><code>.container { 
+          display: grid;
+          place-items: center;
+      }</code></pre>
+        </div>
+        <div class="container" id="example2">
+          <div class="center-me">center me!</div>
+        </div>
+      </div>
+      
+      <div class="page">
+        <div class="details">
+          <em>Example 3</em>
+          <div class="heading">
+            <h1>Position Absolute</h1>
+            <div>
+              <img src="http://lorem.photos/blog/images/align.svg" alt="hotizontal" class="svg horizontal" title="Horizontal Alignment">
+              <img src="http://lorem.photos/blog/images/align.svg" alt="Vertical" class="svg vertical" title="Vertical Alignment">
+            </div>
+          </div>
+          <p>Give the parent container <code>position: relative;</code> and then make the child <code>position: absolute;</code>. Now you can position it in center using left and top rule. However defining <code>top: 50%;</code> and <code>left: 50%;</code> moves the top left corner of the child at 50% which is not exactly center. So to make it perfectly centered, we need to also specify a <code>transform: translate(-50%, -50%);</code> which moves the child towards left 50% of its own width, and top 50% of its height. Which gives us perfectly centered content.</p>
+          <pre><code>#example3 {
+        position:relative;
+      }
+      
+      #example3 div {
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+      }</code></pre>
+        </div>
+        <div class="container" id="example3">
+          <div class="center-me">center me!</div>
+        </div>
+      </div>
+      
+
+
+      <div class="page">
+        <div class="details">
+          <em>Example 4</em>
+          <div class="heading">
+            <h1>Using table</h1>
+            <div>
+              <img src="http://lorem.photos/blog/images/align.svg" alt="hotizontal" class="svg horizontal" title="Horizontal Alignment">
+              <img src="http://lorem.photos/blog/images/align.svg" alt="Vertical" class="svg vertical" title="Vertical Alignment">
+            </div>
+          </div>
+          <p>This technique can be used if we do not worry about child div stretching vertically and horizontally in the parent div. We can simply make the parent div behave as table by <code>display: table;</code> and the child div a cell inside table by specifying <code>display: table;</code> on child element. Now we can use the property <code>vertical-align: middle;</code> to align the content vertically centered. If you want to align it horizontally centered too, you can use <code>text-align: center;</code> in the child.</p>
+          <pre><code>#example4 {
+        display: table;
+      }
+      #example4 .center-me {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+      </code></pre>
+        </div>
+        <div class="container" id="example4">
+          <div class="center-me">center me!</div>
+        </div>
+      </div>
+      
+      
+      
+      <div class="page">
+        <div class="details">
+          <em>Example 5</em>
+          
+          <div class="heading">
+            <h1>Auto Margin</h1>
+            <img src="http://lorem.photos/blog/images/align.svg" alt="hotizontal" class="svg horizontal" title="Horizontal Alignment">
+          </div>
+          
+          <p>This method works on the content itself and is not dependent on container div. But it only works when the width of the content is known or defined in the CSS. Defining left and right margin as <code>auto</code> tells css to always have the same margin on left and right, which makes it align centered. <code>margin: auto;</code> only works for centering horizontally, it does not work vertically.</p>
+          
+          <pre><code> #child4 { 
+          width: 100px;
+          margin: 0 auto;
+      }</code></pre>
+        </div>
+        <div class="container" id="example5">
+          <div class="center-me">center me!</div>
+        </div>
+      </div>
+      
+      
+
+      <div class="page">
+        <div>
+          <em>Example 6</em>
+       
+          <div class="heading">
+            <h1>Text Align</h1>
+            <img src="http://lorem.photos/blog/images/align.svg" alt="hotizontal" class="svg horizontal" title="Horizontal Alignment">
+          </div>
+          
+          <p>The <code>text-align</code> property in CSS is used for aligning the inner content of a block element. 
+              When you add <code>text-align: center;</code> to the parent element, its inside content centers between the left and right edges. White space on the left and right sides of each line should be equal. While <code>text-align</code> certainly affects text, it affects all inline or inline-block elements in that container. 
+          </p>
+          <pre><code> #example6 { 
+          text-align: center;
+      }</code></pre>
+        </div>
+        <div class="container" id="example6">
+          <div class="center-me">center me!</div>
+        </div>
+      </div>
+      
+
+
+      <div class="page">
+        <div>
+          <em>Example 7</em>
+       
+          <div class="heading">
+            <h1>Padding with calc</h1>
+            <img src="http://lorem.photos/blog/images/align.svg" alt="hotizontal" class="svg" title="Horizontal Alignment">
+          </div>
+          <p>
+            If you know the height of your content, you can also use padding in combination with calc() function in CSS. When we assign 50% padding on both sides it leaves no room for the content. Then we use Calc() function to subtract the width of our content. For example: if we have a content of 100px, we subtract 50px from both left and right padding.<br/>
+            Its not a very effective way, but just to mention that it can be useful to center content without parent container. It can be used in very creative way and as a fallback for grid.
+          </p>
+          <pre><code> #example7 .center-me { 
+          height: 100px;
+          padding: 0 calc(50% - 20px) ;
+      }</code></pre>
+        </div>
+        <div class="container" id="example7">
+          <div class="center-me">center me!</div>
+        </div>
+      </div>
+      
+      
+      <div class="footer">
+        <p>For more detailed explanation please go this this amazing article from CSS-Tricks<br/>
+        
+        <a href="https://css-tricks.com/centering-css-complete-guide/">https://css-tricks.com/centering-css-complete-guide/</a></p>
+        
+      </div>
+</body>
+</html>
+
+
+
+ 
